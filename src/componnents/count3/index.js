@@ -4,10 +4,12 @@ import React, { useState } from "react";
 
 
 function LightBulb() {
-  let [light, setLight] = useState(0);
+  let [light, setLight] = useState(1);
 
   const setOff = () => setLight(0);
   const setOn = () => setLight(1);
+
+  const setSwitch = () => setLight(light === 1 ? 0 : 1);
 
   let fillColor = light === 1 ? "#ffbb73" : "#000000";
 
@@ -19,6 +21,7 @@ function LightBulb() {
 
       <button onClick={setOff}>Off</button>
       <button onClick={setOn}>On</button>
+      <button onClick={setSwitch}>Switch</button>
     </div>
   );
 }
